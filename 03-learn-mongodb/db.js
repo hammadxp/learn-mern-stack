@@ -3,7 +3,7 @@ const { MongoClient } = require("mongodb");
 let dbConnection;
 
 function connectToDb(cb) {
-  MongoClient.connect("mongodb://localhost:27017/college")
+  MongoClient.connect("mongodb://127.0.0.1:27017/college")
     .then((client) => {
       dbConnection = client.db();
       return cb();
