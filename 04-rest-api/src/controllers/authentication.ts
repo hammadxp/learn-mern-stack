@@ -20,7 +20,7 @@ export async function signIn(req: express.Request, res: express.Response) {
 
     // check if password hash matches with encryptedPassword hash
     const encryptedPasswordAgain = encryptString(password, user.authentication.salt);
-    if (encryptedPasswordAgain != user.authentication.encryptedPassword) {
+    if (encryptedPasswordAgain !== user.authentication.encryptedPassword) {
       return res.sendStatus(403);
     }
 
